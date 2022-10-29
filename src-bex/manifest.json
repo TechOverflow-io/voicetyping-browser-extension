@@ -1,0 +1,63 @@
+{
+  "name": "Voice Typing",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icons/icon-16x16.png",
+    "48": "icons/icon-48x48.png",
+    "128": "icons/icon-128x128.png"
+  },
+  "browser_action": {
+    "default_title": "voice-typing-browser-extension"
+  },
+  "background": {
+    "scripts": [
+      "js/bs/background.js",
+      "js/share/tools.js",
+      "js/bs/common.js",
+      "js/share/markup.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/vendors/jquery.min.js",
+        "js/vendors/purify.js",
+        "js/vendors/ally.js",
+        "js/vendors/most.js",
+        "js/vendors/featherlight/featherlight.js",
+        "js/share/helpers.js",
+        "js/share/tools.js",
+        "js/share/markup.js",
+        "js/cs/contentscript.js",
+        "js/cs/textarea.js",
+        "www/bex-content-script.js",
+        "js/content-script.js"
+      ],
+      "css": [
+        "js/vendors/featherlight/featherlight.css",
+        "css/lt-marker-style.css",
+        "css/vt-styles.css",
+        "css/content-css.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "<all_urls>",
+    "storage",
+    "activeTab"
+  ],
+  "web_accessible_resources": [
+    "www/*",
+    "js/*",
+    "css/*",
+    "images/*",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+}
