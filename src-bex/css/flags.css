@@ -1,0 +1,116 @@
+#voicely-group {
+  background-color: #fff;
+  width: 50px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+#voicely-group:hover {
+  width: 90px;
+  padding-left: 10px;
+}
+
+#voicely-group:hover .vl-country-flags {
+  opacity: 1;
+  transition: 0.5s ease-in 0.2s;
+}
+
+#voicely-mic-svg {
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.vl-country-flags {
+  opacity: 0;
+  width: 30%;
+}
+
+.vl-country-flags .select {
+  width: 3.0rem;
+  position: relative;
+  height: 35px;
+  line-height: 40px;
+  background: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.vl-country-flags .select:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 9px;
+  right: 3px;
+  width: 10px;
+  height: 100%;
+  background: url('../icons/caret-down-solid.svg') no-repeat;
+  filter: invert(90%) sepia(0%) saturate(203%) hue-rotate(172deg) brightness(94%) contrast(89%);
+}
+
+
+.vl-country-flags .select.open:after {
+  background-position: 0 -5px;
+}
+
+.vl-country-flags * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#vl-country-flags-drop>ul {
+  list-style: none;
+}
+
+.vl-country-flags .dropdown {
+  display: none;
+  position: absolute;
+  top: 39px;
+  left: 0;
+  overflow: hidden;
+  border: 1px solid #cfcfcf;
+  border-top: 1px solid #a6a6a6;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.vl-country-flags .dropdown i {
+  vertical-align: middle;
+}
+
+.vl-country-flags .dropdown li {
+  padding: 0 20px;
+  line-height: 34px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #828282;
+  cursor: pointer;
+}
+
+.vl-country-flags .dropdown li:first-child {
+  margin-top: 12px;
+}
+
+.vl-country-flags .dropdown li:last-child {
+  margin-bottom: 12px;
+}
+
+.vl-country-flags .dropdown li:hover {
+  background: #DEDEDE;
+  color: #454545;
+}
+
+.vl-country-flags .dropdown li.open {
+  display: block;
+}
